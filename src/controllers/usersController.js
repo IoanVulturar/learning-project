@@ -9,6 +9,16 @@ const getUsers = async (req, res) => {
     }
 }
 
+
+const getUser = async (req, res) => {
+    try {
+        const user = await usersService.getUser(req, res)
+        res.status(200).json(user)
+    } catch (err) {
+        res.status(500).json({ message: err.message })
+    }
+}
+
 const addUser = async (req, res) => {
 
     try {
@@ -19,7 +29,28 @@ const addUser = async (req, res) => {
     }
 }
 
+const updateUser = async (req, res) => {
+    try {
+        const user = await usersService.updateUser(req, res)
+        res.status(200).json(user)
+    } catch (err) {
+        res.status(500).json({ message: err.message })
+    }
+}
+
+const removeUser = async (req, res) => {
+    try {
+        const user = await usersService.removeUser(req, res)
+        res.status(200).json(user)
+    } catch (err) {
+        res.status(500).json({ message: err.message })
+    }
+}
+
 module.exports = {
     getUsers,
-    addUser
+    getUser,
+    addUser,
+    updateUser,
+    removeUser
 }

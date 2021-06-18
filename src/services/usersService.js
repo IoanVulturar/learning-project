@@ -9,6 +9,18 @@ const getUsers = async (req, res) => {
     }
 }
 
+const getUser = async (req, res) => {
+    try {
+        const user = await usersModel.findById(req.params.id)
+        if (!user) {
+            res.status(404).json({ message: "Cannot find user" })
+        }
+        res.json(user)
+    } catch (err) {
+        res.status(500).json({ message: err.message })
+    }
+}
+
 const addUser = async (req, res) => {
     const user = new usersModel({
         firstName: req.body.firstName,
@@ -26,7 +38,45 @@ const addUser = async (req, res) => {
     }
 }
 
+const updateUser = async (req, res) => {
+    try {
+        const userToUpdate = await usersModel.findById(req.params.id)
+        if (!userToUpdate) {
+            res.status(404).json({ message: "Cannot find user" })
+        }
+
+        userToUpdate.firstName = req.body.firstName || userToUpdate.firstName
+        userToUpdate.lastName = req.body.lastName || userToUpdate.lastName
+        userToUpdate.email = req.body.email || userToUpdate.email
+        userToUpdate.phoneNumber = req.body.phoneNumber || userToUpdate.phoneNumber
+        userToUpdate.role = req.body.role || userToUpdate.role
+
+        await userToUpdate.save()
+
+        res.json(userToUpdate)
+    } catch (err) {
+        res.status(500).json({ message: err.message })
+    }
+}
+
+const removeUser = async (req, res) => {
+    try {
+        const userToRemove = await usersModel.findById(req.params.id)
+        if (!userToRemove) {
+            res.status(404).json({ message: "Cannot find user" })
+        }
+
+        await userToRemove.remove()
+        res.json({ message: "User removed!" })
+    } catch (err) {
+        res.status(500).json({ message: err.message })
+    }
+}
+
 module.exports = {
     getUsers,
-    addUser
+    addUser,
+    getUser,
+    updateUser,
+    removeUser
 }
