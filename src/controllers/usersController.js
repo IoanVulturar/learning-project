@@ -1,4 +1,5 @@
 const usersService = require('../services/usersService')
+const { emailValidation } = require('../utils/validation')
 
 const getUsers = async (req, res) => {
     try {
@@ -11,6 +12,7 @@ const getUsers = async (req, res) => {
 
 
 const getUser = async (req, res) => {
+
     try {
         const user = await usersService.getUser(req, res)
         res.status(200).json(user)
@@ -20,16 +22,35 @@ const getUser = async (req, res) => {
 }
 
 const addUser = async (req, res) => {
+    const { email, phoneNumber } = req.body
+
+    if (!emailValidation(email)) {
+        return res.status(400).json({ message: "Invalid email!" })
+    }
+    if (!phoneValidation(phoneNumber)) {
+        return res.status(400).json({ message: "Invalid phone number!" })
+    }
 
     try {
         const user = await usersService.addUser(req, res)
         res.status(200).json(user)
+
     } catch (err) {
         res.json({ status: err.status, message: "usersController: " + err.message })
     }
 }
 
 const updateUser = async (req, res) => {
+
+    const { email, phoneNumber } = req.body
+
+    if (!emailValidation(email)) {
+        return res.status(400).json({ message: "Invalid email!" })
+    }
+    if (!phoneValidation(phoneNumber)) {
+        return res.status(400).json({ message: "Invalid phone number!" })
+    }
+
     try {
         const user = await usersService.updateUser(req, res)
         res.status(200).json(user)
