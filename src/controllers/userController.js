@@ -1,12 +1,12 @@
 const userServices = require('../services/userServices')
-const { emailValidator, phoneValidator } = require('../utils/validators')
+const { emailValidator, phoneValidator, passwordValidator } = require('../utils/validators')
 
 const getUsers = async (req, res) => {
     try {
         const users = await userServices.getUsers(req, res)
-        res.status(200).json(users)
+        res.json({ status: 200, users })
     } catch (err) {
-        res.status(400).json({ status: 400, message: err.message })
+        res.json(err)
     }
 }
 
@@ -15,35 +15,36 @@ const getUser = async (req, res) => {
     try {
         const user = await userServices.getUser(req, res)
         res.json({ status: 200, user })
-        // res.status(200).json(user)
     } catch (err) {
-        res.status(500).json({ message: 'Controller error message!' })
-        // status() doesn't work - add status code to json()
+        res.json(err)
     }
 }
 
 const addUser = async (req, res) => {
-    const { email, phoneNumber } = req.body
+    const { email, phoneNumber, password } = req.body
 
     if (!emailValidator(email)) {
-        return res.status(400).json({ message: "Invalid email!" })
+        return res.json({ message: "Invalid email" })
     }
     if (!phoneValidator(phoneNumber)) {
-        return res.status(400).json({ message: "Invalid phone number!" })
+        return res.json({ message: "Invalid phone number" })
+    }
+    if (!passwordValidator(password)) {
+        return res.json({ message: "Invalid password" })
     }
 
     try {
-        const user = await userServices.addUser(req, res)
-        res.status(201).json(user)
+        const request = await userServices.addUser(req, res)
+        res.json(request)
 
     } catch (err) {
-        res.json({ status: err.status, message: "usersController: " + err.message })
+        res.json(err)
     }
 }
 
 const updateUser = async (req, res) => {
 
-    const { email, phoneNumber } = req.body
+    const { email, phoneNumber, password } = req.body
 
     if (!emailValidator(email)) {
         return res.status(400).json({ message: "Invalid email!" })
@@ -51,21 +52,24 @@ const updateUser = async (req, res) => {
     if (!phoneValidator(phoneNumber)) {
         return res.status(400).json({ message: "Invalid phone number!" })
     }
+    if (!passwordValidator(password)) {
+        return res.json({ message: "Invalid password" })
+    }
 
     try {
-        const user = await userServices.updateUser(req, res)
-        res.status(200).json(user)
+        const request = await userServices.updateUser(req, res)
+        res.json(request)
     } catch (err) {
-        res.status(500).json({ message: err.message })
+        res.json(err)
     }
 }
 
 const removeUser = async (req, res) => {
     try {
-        const user = await userServices.removeUser(req, res)
-        res.status(200).json(user)
+        const request = await userServices.removeUser(req, res)
+        res.json(request)
     } catch (err) {
-        res.status(500).json({ message: err.message })
+        res.json(err)
     }
 }
 

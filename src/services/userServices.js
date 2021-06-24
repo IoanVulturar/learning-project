@@ -3,31 +3,34 @@ const userModel = require('../models/userModel')
 const getUsers = async (req, res) => {
     try {
         const users = await userModel.find()
+        if (!users) {
+            return "Users not found"
+        }
         return users
     } catch (err) {
-        return 'Database error: getUsers() method - Status code: ' + err.status
+        return Promise.reject({ status: 404, message: 'Resource Not Found' })
     }
 }
 
-const getUser = async (req, res) => {
+const getUser = async (req) => {
     const { id } = req.params
 
     try {
         const user = await userModel.findById(id)
         if (!user) {
-            return "User not found!"
+            return "User not found"
         }
         return user
     } catch (err) {
-        return 'Database error: getUser() method - Status code: ' + err.status
+        return Promise.reject({ status: 404, message: 'Resource Not Found' })
     }
 }
 
-const addUser = async (req, res) => {
-    const { firstName, lastName, email, phoneNumber, role } = req.body
+const addUser = async (req) => {
+    const { userName, password, email, phoneNumber, role } = req.body
     const user = new userModel({
-        firstName: firstName,
-        lastName: lastName,
+        userName: userName,
+        password: password,
         email: email,
         phoneNumber: phoneNumber,
         role: role
@@ -35,52 +38,51 @@ const addUser = async (req, res) => {
 
     try {
         const newUser = await user.save()
-        return 'User has been added!'
-        // res.json({ status: '201', newUser })
-        // res.status(201).json(newUser)
-        // return newUser
+        if (!newUser) {
+            return "User has not been added"
+        }
+        return { status: 201, message: 'New user has been added' }
     } catch (err) {
-        return 'Database error: addUser() method - Status code: ' + err.status
+        return Promise.reject({ status: 404, message: 'Resource Not Found' })
     }
 }
 
 const updateUser = async (req, res) => {
-    const { firstName, lastName, email, phoneNumber, role } = req.body
+    const { userName, email, phoneNumber, role } = req.body
     const { id } = req.params
 
     try {
         const userToUpdate = await userModel.findById(id)
         if (!userToUpdate) {
-            return 'User not found for update!'
+            return 'User not found for update'
         }
 
-        userToUpdate.firstName = firstName || userToUpdate.firstName
-        userToUpdate.lastName = lastName || userToUpdate.lastName
+        userToUpdate.userName = userName || userToUpdate.userName
+        userToUpdate.password = password || userToUpdate.password
         userToUpdate.email = email || userToUpdate.email
         userToUpdate.phoneNumber = phoneNumber || userToUpdate.phoneNumber
         userToUpdate.role = role || userToUpdate.role
 
         await userToUpdate.save()
-
-        res.json(userToUpdate)
+        return { status: 200, message: 'User has been updated' }
     } catch (err) {
-        return 'Database error: updateUser() method - Status code: ' + err.status
+        return Promise.reject({ status: 404, message: 'Resource Not Found' })
     }
 }
 
-const removeUser = async (req, res) => {
+const removeUser = async (req) => {
     const { id } = req.params
 
     try {
         const userToRemove = await userModel.findById(id)
         if (!userToRemove) {
-            return 'User not found for deletion!'
+            return 'User not found for deletion'
         }
 
         await userToRemove.remove()
-        return "User removed!"
+        return { status: 200, message: 'User removed' }
     } catch (err) {
-        return 'Database error: removeUser() method - Status code: ' + err.status
+        return Promise.reject({ status: 404, message: 'Resource Not Found' })
     }
 }
 
