@@ -1,4 +1,5 @@
 const userModel = require('../models/userModel')
+// const bcrypt = require('bcrypt')
 
 const getUsers = async (req, res) => {
     try {
@@ -28,6 +29,8 @@ const getUser = async (req) => {
 
 const addUser = async (req) => {
     const { userName, password, email, phoneNumber, role } = req.body
+    // const hashedPassword = await bcrypt.hash(password, 10)
+
     const user = new userModel({
         userName: userName,
         password: password,
@@ -43,7 +46,7 @@ const addUser = async (req) => {
         }
         return { status: 201, message: 'New user has been added' }
     } catch (err) {
-        return Promise.reject({ status: 404, message: 'Resource Not Found' })
+        return Promise.reject({ status: 400, message: 'Cannot add user' })
     }
 }
 

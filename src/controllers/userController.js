@@ -1,5 +1,5 @@
 const userServices = require('../services/userServices')
-const { emailValidator, phoneValidator, passwordValidator } = require('../utils/validators')
+const { userNameValidator, emailValidator, phoneValidator, passwordValidator } = require('../utils/validators')
 
 const getUsers = async (req, res) => {
     try {
@@ -21,17 +21,20 @@ const getUser = async (req, res) => {
 }
 
 const addUser = async (req, res) => {
-    const { email, phoneNumber, password } = req.body
+    const { userName, email, phoneNumber, password } = req.body
 
+    if (!userNameValidator(userName)) {
+        return res.json({ message: "Invalid username" })
+    }
     if (!emailValidator(email)) {
         return res.json({ message: "Invalid email" })
     }
     if (!phoneValidator(phoneNumber)) {
         return res.json({ message: "Invalid phone number" })
     }
-    if (!passwordValidator(password)) {
-        return res.json({ message: "Invalid password" })
-    }
+    // if (!passwordValidator(password)) {
+    //     return res.json({ message: "Invalid password" })
+    // }
 
     try {
         const request = await userServices.addUser(req, res)
