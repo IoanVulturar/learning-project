@@ -1,13 +1,16 @@
 const express = require('express')
-const { verifyAccess } = require('../utils/middleware')
 const router = express.Router()
+
 const userController = require('../controllers/userController')
 
+const { verifyAccess } = require('../utils/loginAuth')
+router.use(verifyAccess)
+
 router
-    .get('/', verifyAccess, userController.getUsers)
-    .get('/:id', verifyAccess, userController.getUser)
+    .get('/', userController.getUsers)
+    .get('/:id', userController.getUser)
     .post('/', userController.addUser)
-    .patch('/:id', verifyAccess, userController.updateUser)
-    .delete('/:id', verifyAccess, userController.removeUser)
+    .patch('/:id', userController.updateUser)
+    .delete('/:id', userController.removeUser)
 
 module.exports = router
