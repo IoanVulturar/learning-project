@@ -1,9 +1,9 @@
-const { loginService } = require('../services/loginServices')
+const loginService = require('../services/loginServices')
 const userModel = require('../models/userModel')
 const { userNameValidator, passwordValidator } = require('../utils/validators')
 // const bcrypt = require('bcrypt')
 
-exports.loginController = async (req, res) => {
+module.exports = async (req, res) => {
     const { userName, password } = req.body
     if (!userNameValidator(userName)) {
         return res.status(403).jsend('Username doesn\'t match the requirements')

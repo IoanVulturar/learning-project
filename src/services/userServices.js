@@ -25,19 +25,19 @@ const getUser = async (id) => {
     }
 }
 
-const addUser = async (userName, password, email, phoneNumber, role) => {
-    // const hashedPassword = await bcrypt.hash(password, 10)
+const addUser = async (user) => {
+    // const hashedPassword = await bcrypt.hash(user.password, 10)
 
-    const user = new userModel({
-        userName: userName,
-        password: password,
-        email: email,
-        phoneNumber: phoneNumber,
-        role: role
+    const userToAdd = new userModel({
+        userName: user.userName,
+        password: user.password,
+        email: user.email,
+        phoneNumber: user.phoneNumber,
+        role: user.role
     })
 
     try {
-        const newUser = await user.save()
+        const newUser = await userToAdd.save()
         if (!newUser) {
             return "User has not been added"
         }
@@ -47,18 +47,18 @@ const addUser = async (userName, password, email, phoneNumber, role) => {
     }
 }
 
-const updateUser = async (id, userName, password, email, phoneNumber, role) => {
+const updateUser = async (id, user) => {
     try {
         const userToUpdate = await userModel.findById(id)
         if (!userToUpdate) {
             return 'User not found for update'
         }
 
-        userToUpdate.userName = userName || userToUpdate.userName
-        userToUpdate.password = password || userToUpdate.password
-        userToUpdate.email = email || userToUpdate.email
-        userToUpdate.phoneNumber = phoneNumber || userToUpdate.phoneNumber
-        userToUpdate.role = role || userToUpdate.role
+        userToUpdate.userName = user.userName || userToUpdate.userName
+        userToUpdate.password = user.password || userToUpdate.password
+        userToUpdate.email = user.email || userToUpdate.email
+        userToUpdate.phoneNumber = user.phoneNumber || userToUpdate.phoneNumber
+        userToUpdate.role = user.role || userToUpdate.role
 
         await userToUpdate.save()
         return 'User has been updated'

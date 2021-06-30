@@ -21,23 +21,29 @@ const getUser = async (req, res) => {
 }
 
 const addUser = async (req, res) => {
-    const { userName, password, email, phoneNumber, role } = req.body
+    const user = {
+        userName: req.body.userName,
+        password: req.body.password,
+        email: req.body.email,
+        phoneNumber: req.body.phoneNumber,
+        role: req.body.role
+    }
 
-    if (!userNameValidator(userName)) {
+    if (!userNameValidator(user.userName)) {
         return res.json({ message: "Invalid username" })
     }
-    if (!emailValidator(email)) {
+    if (!emailValidator(user.email)) {
         return res.json({ message: "Invalid email" })
     }
-    if (!phoneValidator(phoneNumber)) {
+    if (!phoneValidator(user.phoneNumber)) {
         return res.json({ message: "Invalid phone number" })
     }
-    // if (!passwordValidator(password)) {
+    // if (!passwordValidator(user.password)) {
     //     return res.json({ message: "Invalid password" })
     // }
 
     try {
-        const message = await userServices.addUser(userName, password, email, phoneNumber, role)
+        const message = await userServices.addUser(user)
         res.status(201).send(message)
     } catch (err) {
         res.status(500).send(err)
@@ -45,24 +51,30 @@ const addUser = async (req, res) => {
 }
 
 const updateUser = async (req, res) => {
-    const { userName, password, email, phoneNumber, role } = req.body
     const { id } = req.params
+    const user = {
+        userName: req.body.userName,
+        password: req.body.password,
+        email: req.body.email,
+        phoneNumber: req.body.phoneNumber,
+        role: req.body.role
+    }
 
-    if (!userNameValidator(userName)) {
+    if (!userNameValidator(user.userName)) {
         return res.json({ message: "Invalid username" })
     }
-    if (!emailValidator(email)) {
+    if (!emailValidator(user.email)) {
         return res.status(400).json({ message: "Invalid email!" })
     }
-    if (!phoneValidator(phoneNumber)) {
+    if (!phoneValidator(user.phoneNumber)) {
         return res.status(400).json({ message: "Invalid phone number!" })
     }
-    // if (!passwordValidator(password)) {
+    // if (!passwordValidator(user.password)) {
     //     return res.json({ message: "Invalid password" })
     // }
 
     try {
-        const message = await userServices.updateUser(id, userName, password, email, phoneNumber, role)
+        const message = await userServices.updateUser(id, user)
         res.status(200).send(message)
     } catch (err) {
         res.status(500).send(err)

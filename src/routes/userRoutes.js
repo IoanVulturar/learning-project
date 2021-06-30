@@ -3,7 +3,7 @@ const router = express.Router()
 
 const userController = require('../controllers/userController')
 
-const { verifyAccess } = require('../utils/loginAuth')
+const verifyAccess = require('../utils/loginAuth')
 router.use(verifyAccess)
 
 router
