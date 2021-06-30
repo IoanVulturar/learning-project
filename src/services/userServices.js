@@ -1,7 +1,7 @@
 const userModel = require('../models/userModel')
 // const bcrypt = require('bcrypt')
 
-const getUsers = async (req, res) => {
+const getUsers = async () => {
     try {
         const users = await userModel.find()
         if (!users) {
@@ -9,13 +9,11 @@ const getUsers = async (req, res) => {
         }
         return users
     } catch (err) {
-        return Promise.reject({ status: 404, message: 'Resource Not Found' })
+        return Promise.reject('Cannot find users -> ' + err)
     }
 }
 
-const getUser = async (req) => {
-    const { id } = req.params
-
+const getUser = async (id) => {
     try {
         const user = await userModel.findById(id)
         if (!user) {
@@ -23,59 +21,53 @@ const getUser = async (req) => {
         }
         return user
     } catch (err) {
-        return Promise.reject({ status: 404, message: 'Resource Not Found' })
+        return Promise.reject('Cannot find user -> ' + err)
     }
 }
 
-const addUser = async (req) => {
-    const { userName, password, email, phoneNumber, role } = req.body
-    // const hashedPassword = await bcrypt.hash(password, 10)
+const addUser = async (user) => {
+    // const hashedPassword = await bcrypt.hash(user.password, 10)
 
-    const user = new userModel({
-        userName: userName,
-        password: password,
-        email: email,
-        phoneNumber: phoneNumber,
-        role: role
+    const userToAdd = new userModel({
+        userName: user.userName,
+        password: user.password,
+        email: user.email,
+        phoneNumber: user.phoneNumber,
+        role: user.role
     })
 
     try {
-        const newUser = await user.save()
+        const newUser = await userToAdd.save()
         if (!newUser) {
             return "User has not been added"
         }
-        return { status: 201, message: 'New user has been added' }
+        return 'New user has been added'
     } catch (err) {
-        return Promise.reject({ status: 400, message: 'Cannot add user' })
+        return Promise.reject('Cannot add user -> ' + err)
     }
 }
 
-const updateUser = async (req, res) => {
-    const { userName, email, phoneNumber, role } = req.body
-    const { id } = req.params
-
+const updateUser = async (id, user) => {
     try {
         const userToUpdate = await userModel.findById(id)
         if (!userToUpdate) {
             return 'User not found for update'
         }
 
-        userToUpdate.userName = userName || userToUpdate.userName
-        userToUpdate.password = password || userToUpdate.password
-        userToUpdate.email = email || userToUpdate.email
-        userToUpdate.phoneNumber = phoneNumber || userToUpdate.phoneNumber
-        userToUpdate.role = role || userToUpdate.role
+        userToUpdate.userName = user.userName || userToUpdate.userName
+        userToUpdate.password = user.password || userToUpdate.password
+        userToUpdate.email = user.email || userToUpdate.email
+        userToUpdate.phoneNumber = user.phoneNumber || userToUpdate.phoneNumber
+        userToUpdate.role = user.role || userToUpdate.role
 
         await userToUpdate.save()
-        return { status: 200, message: 'User has been updated' }
+        return 'User has been updated'
     } catch (err) {
-        return Promise.reject({ status: 404, message: 'Resource Not Found' })
+        return Promise.reject('Cannot update user -> ' + err)
     }
 }
 
-const removeUser = async (req) => {
-    const { id } = req.params
-
+const removeUser = async (id) => {
     try {
         const userToRemove = await userModel.findById(id)
         if (!userToRemove) {
@@ -83,9 +75,9 @@ const removeUser = async (req) => {
         }
 
         await userToRemove.remove()
-        return { status: 200, message: 'User removed' }
+        return 'User removed'
     } catch (err) {
-        return Promise.reject({ status: 404, message: 'Resource Not Found' })
+        return Promise.reject('Cannot remove user -> ' + err)
     }
 }
 
