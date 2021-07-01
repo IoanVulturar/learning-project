@@ -19,3 +19,5 @@ app.listen(process.env.PORT, () => {
     console.log(">>> Server started <<<")
     db.connectToDatabase()
 })
+
+require('./logger/test-logger')
