@@ -1,6 +1,7 @@
 const loginService = require('../services/loginServices')
 const userModel = require('../models/userModel')
 const { userNameValidator, passwordValidator } = require('../utils/validators')
+const logger = require('../logger/logger')
 // const bcrypt = require('bcrypt')
 
 module.exports = async (req, res) => {
@@ -25,8 +26,15 @@ module.exports = async (req, res) => {
 
     try {
         const accessToken = await loginService(user)
+
+        // res.cookie('jwt', accessToken)
         res.cookie('jwt', accessToken, { httpOnly: true })
-        res.status(200).send(`Welcome, ${user.userName}`)
+        res.set('Access-Control-Allow-Origin', req.headers.origin)
+        res.set('Access-Control-Allow-Credentials', 'true')
+        res.set('Access-Control-Expose-Headers', '*')
+
+        res.status(200).json({ user })
+        // res.status(200).send(`Welcome, ${user.userName}`)
     } catch (err) {
         res.status(500).send(err)
     }

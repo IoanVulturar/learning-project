@@ -3,6 +3,7 @@ const jwt = require('jsonwebtoken')
 
 module.exports = (req, res, next) => {
     let accessToken = req.cookies.jwt
+
     if (!accessToken) {
         logger().warn('There is no access token for this user')
         return res.status(401).send('There is no access token for this user')

@@ -1,0 +1,112 @@
+2021-07-12 11:26:16 error: text error
+2021-07-12 11:32:53 error: text error
+2021-07-12 11:54:31 error: text error
+2021-07-12 12:03:52 error: text error
+2021-07-12 14:28:32 error: text error
+2021-07-12 15:50:11 error: text error
+2021-07-13 08:58:57 error: text error
+2021-07-13 15:21:48 error: text error
+2021-07-14 09:17:05 error: text error
+2021-07-14 17:31:18 error: text error
+2021-07-15 09:08:12 error: text error
+2021-07-15 09:26:39 error: text error
+2021-07-15 09:26:59 error: Cannot update user
+2021-07-15 09:27:49 error: Cannot update user
+2021-07-15 09:33:36 error: text error
+2021-07-15 11:14:30 error: text error
+2021-07-15 11:14:50 error: text error
+2021-07-15 11:32:40 error: text error
+2021-07-15 11:43:51 error: text error
+2021-07-15 11:49:22 error: text error
+2021-07-15 12:02:52 error: text error
+2021-07-15 12:04:30 error: text error
+2021-07-15 12:24:00 error: text error
+2021-07-15 12:46:19 error: text error
+2021-07-15 12:46:45 error: text error
+2021-07-15 12:52:55 error: text error
+2021-07-15 13:04:41 error: text error
+2021-07-15 13:28:00 error: text error
+2021-07-15 13:31:56 error: text error
+2021-07-15 13:36:11 error: text error
+2021-07-15 13:39:46 error: text error
+2021-07-15 14:32:53 error: text error
+2021-07-15 14:49:25 error: text error
+2021-07-15 14:53:41 error: text error
+2021-07-15 14:56:44 error: text error
+2021-07-15 15:25:25 error: text error
+2021-07-15 17:10:01 error: text error
+2021-07-15 17:10:10 error: text error
+2021-07-15 17:14:44 error: text error
+2021-07-15 18:10:16 error: text error
+2021-07-15 19:17:20 error: text error
+2021-07-15 19:18:13 error: text error
+2021-07-15 19:18:40 error: text error
+2021-07-15 19:19:15 error: text error
+2021-07-15 19:26:08 error: text error
+2021-07-15 19:27:23 error: text error
+2021-07-16 09:03:17 error: text error
+2021-07-16 09:09:19 error: text error
+2021-07-16 09:15:18 error: text error
+2021-07-16 09:15:34 error: text error
+2021-07-16 11:03:18 error: text error
+2021-07-16 12:20:36 error: text error
+2021-07-16 13:05:28 error: text error
+2021-07-16 13:05:57 error: text error
+2021-07-16 13:06:29 error: text error
+2021-07-16 13:19:13 error: text error
+2021-07-16 13:21:37 error: text error
+2021-07-16 13:33:54 error: text error
+2021-07-16 13:42:14 error: text error
+2021-07-16 13:47:49 error: text error
+2021-07-16 13:49:57 error: text error
+2021-07-16 13:57:41 error: text error
+2021-07-16 14:13:23 error: text error
+2021-07-16 14:15:47 error: text error
+2021-07-16 14:17:07 error: text error
+2021-07-16 14:20:31 error: text error
+2021-07-16 14:24:29 error: text error
+2021-07-16 14:39:14 error: text error
+2021-07-16 14:41:06 error: text error
+2021-07-16 14:42:15 error: text error
+2021-07-16 14:42:47 error: text error
+2021-07-16 17:04:15 error: text error
+2021-07-16 17:46:50 error: text error
+2021-07-19 09:00:54 error: text error
+2021-07-19 09:46:54 error: text error
+2021-07-19 09:47:04 error: Cannot add user -> users validation failed: userName: Path `userName` is required., password: Path `password` is required., email: Path `email` is required., phoneNumber: Path `phoneNumber` is required., role: Path `role` is required.
+2021-07-19 09:47:44 error: Cannot add user -> users validation failed: userName: Path `userName` is required., password: Path `password` is required., email: Path `email` is required., phoneNumber: Path `phoneNumber` is required., role: Path `role` is required.
+2021-07-19 09:50:11 error: Cannot add user -> users validation failed: userName: Path `userName` is required., password: Path `password` is required., email: Path `email` is required., phoneNumber: Path `phoneNumber` is required., role: Path `role` is required.
+2021-07-19 09:51:22 error: text error
+2021-07-19 09:51:30 error: Cannot add user -> users validation failed: userName: Path `userName` is required., password: Path `password` is required., email: Path `email` is required., phoneNumber: Path `phoneNumber` is required., role: Path `role` is required.
+2021-07-19 09:56:17 error: text error
+2021-07-19 10:30:50 error: Cannot add user -> E11000 duplicate key error collection: Learning.users index: userName_1 
+2021-07-19 11:07:41 error: text error
+2021-07-19 11:10:41 error: text error
+2021-07-19 12:05:19 error: text error
+2021-07-19 12:11:00 error: text error
+2021-07-19 12:12:21 error: text error
+2021-07-19 12:13:08 error: text error
+2021-07-19 12:17:50 error: text error
+2021-07-19 12:18:39 error: text error
+2021-07-19 12:20:21 error: text error
+2021-07-19 12:20:47 error: text error
+2021-07-19 12:22:14 error: text error
+2021-07-19 12:23:30 error: text error
+2021-07-19 12:24:20 error: text error
+2021-07-19 12:26:30 error: text error
+2021-07-19 12:26:52 error: text error
+2021-07-19 13:49:58 error: Cannot found user
+2021-07-19 14:53:56 error: text error
+2021-07-19 14:55:28 error: text error
+2021-07-19 15:20:28 error: text error
+2021-07-19 15:20:54 error: text error
+2021-07-19 15:28:46 error: text error
+2021-07-20 09:56:19 error: text error
+2021-07-20 12:48:02 error: text error
+2021-07-20 12:48:10 error: text error
+2021-07-20 13:35:30 error: text error
+2021-07-20 14:46:54 error: text error
+2021-07-20 14:50:27 error: text error
+2021-07-20 17:24:05 error: Cannot add user -> E11000 duplicate key error collection: Learning.users index: password_1 
+2021-07-20 17:24:12 error: Cannot add user -> E11000 duplicate key error collection: Learning.users index: password_1 
+2021-07-20 17:24:23 error: Cannot add user -> E11000 duplicate key error collection: Learning.users index: phoneNumber_1 

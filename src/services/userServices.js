@@ -9,12 +9,46 @@ const getUsers = async () => {
             return "Users not found"
         }
         logger().info('Users Found')
-        return users
+
+        return users.map(user => {
+            return {
+                id: user._id,
+                userName: user.userName,
+                email: user.email,
+                phoneNumber: user.phoneNumber,
+                role: user.role
+            }
+        })
     } catch (err) {
         logger().error('Cannot found users')
         return Promise.reject('Cannot find users -> ' + err)
     }
 }
+
+// const getUser = async (id) => {
+//     try {
+//         const response = await userModel.find({ userName: id })
+
+//         if (!response) {
+//             return "User not found"
+//         }
+//         logger().info('User Found')
+
+//         const user = response[0]
+//         const newUser = {
+//             id: user._id,
+//             userName: user.userName,
+//             email: user.email,
+//             phoneNumber: user.phoneNumber,
+//             role: user.role
+//         }
+//         return newUser
+
+//     } catch (err) {
+//         logger().error('Cannot found user')
+//         return Promise.reject('Cannot find user -> ' + err)
+//     }
+// }
 
 const getUser = async (id) => {
     try {
@@ -75,6 +109,23 @@ const updateUser = async (id, user) => {
         return Promise.reject('Cannot update user -> ' + err)
     }
 }
+
+// const removeUser = async (id) => {
+//     try {
+//         const userToRemove = await userModel.find({ userName: id })
+//         if (!userToRemove) {
+//             logger().warn('User not found for deletion')
+//             return 'User not found for deletion'
+//         }
+
+//         await userToRemove.remove()
+//         logger().info('User removed')
+//         return 'User removed'
+//     } catch (err) {
+//         logger().error('Cannot remove user')
+//         return Promise.reject('Cannot remove user -> ' + err)
+//     }
+// }
 
 const removeUser = async (id) => {
     try {

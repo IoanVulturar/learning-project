@@ -29,15 +29,15 @@ const addUser = async (req, res) => {
         role: req.body.role
     }
 
-    if (!userNameValidator(user.userName)) {
-        return res.json({ message: "Invalid username" })
-    }
-    if (!emailValidator(user.email)) {
-        return res.json({ message: "Invalid email" })
-    }
-    if (!phoneValidator(user.phoneNumber)) {
-        return res.json({ message: "Invalid phone number" })
-    }
+    // if (!userNameValidator(user.userName)) {
+    //     return res.json({ message: "Invalid username" })
+    // }
+    // if (!emailValidator(user.email)) {
+    //     return res.json({ message: "Invalid email" })
+    // }
+    // if (!phoneValidator(user.phoneNumber)) {
+    //     return res.json({ message: "Invalid phone number" })
+    // }
     // if (!passwordValidator(user.password)) {
     //     return res.json({ message: "Invalid password" })
     // }
@@ -60,15 +60,15 @@ const updateUser = async (req, res) => {
         role: req.body.role
     }
 
-    if (!userNameValidator(user.userName)) {
-        return res.json({ message: "Invalid username" })
-    }
-    if (!emailValidator(user.email)) {
-        return res.status(400).json({ message: "Invalid email!" })
-    }
-    if (!phoneValidator(user.phoneNumber)) {
-        return res.status(400).json({ message: "Invalid phone number!" })
-    }
+    // if (!userNameValidator(user.userName)) {
+    //     return res.json({ message: "Invalid username" })
+    // }
+    // if (!emailValidator(user.email)) {
+    //     return res.status(400).json({ message: "Invalid email!" })
+    // }
+    // if (!phoneValidator(user.phoneNumber)) {
+    //     return res.status(400).json({ message: "Invalid phone number!" })
+    // }
     // if (!passwordValidator(user.password)) {
     //     return res.json({ message: "Invalid password" })
     // }
