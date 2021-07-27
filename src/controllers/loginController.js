@@ -20,6 +20,7 @@ module.exports = async (req, res) => {
     if (password !== user.password) {
         return res.status(500).send('Invalid password')
     }
+
     // if (!await bcrypt.compare(password, user.password)) {
     //     return res.status(500).json({ message: 'Invalid password' })
     // }

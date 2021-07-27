@@ -12363,3 +12363,125 @@
 2021-07-20 17:24:23 error: Cannot add user -> E11000 duplicate key error collection: Learning.users index: phoneNumber_1 
 2021-07-20 17:24:30 info: New User Added
 2021-07-20 17:24:38 info: Users Found
+2021-07-22 09:31:28 warn: text warn
+2021-07-22 09:31:28 info: text info
+2021-07-22 09:31:29 error: text error
+2021-07-22 09:32:04 info: User ACCESS TOKEN created
+2021-07-22 09:32:27 info: User ACCESS TOKEN created
+2021-07-22 09:32:46 info: User ACCESS TOKEN created
+2021-07-22 09:36:11 info: User ACCESS TOKEN created
+2021-07-22 09:36:14 info: Users Found
+2021-07-22 09:36:18 info: Users Found
+2021-07-22 09:47:33 info: Users Found
+2021-07-22 10:11:26 info: User updated
+2021-07-22 10:11:29 info: User updated
+2021-07-22 10:11:32 info: Users Found
+2021-07-22 10:11:37 info: User updated
+2021-07-22 10:11:54 info: User ACCESS TOKEN created
+2021-07-22 10:12:26 info: User ACCESS TOKEN created
+2021-07-22 10:12:31 info: Users Found
+2021-07-22 10:35:08 info: User ACCESS TOKEN created
+2021-07-22 10:35:11 info: Users Found
+2021-07-22 11:33:08 info: User ACCESS TOKEN created
+2021-07-22 11:41:27 info: User ACCESS TOKEN created
+2021-07-22 11:41:33 info: Users Found
+2021-07-22 11:48:39 info: User ACCESS TOKEN created
+2021-07-22 12:02:22 info: User ACCESS TOKEN created
+2021-07-22 12:07:31 info: User ACCESS TOKEN created
+2021-07-22 12:07:36 info: Users Found
+2021-07-22 12:07:42 info: Users Found
+2021-07-26 11:09:39 error: text error
+2021-07-26 11:09:39 warn: text warn
+2021-07-26 11:09:39 info: text info
+2021-07-26 11:10:05 info: User ACCESS TOKEN created
+2021-07-26 11:18:12 info: Users Found
+2021-07-26 14:14:28 info: User ACCESS TOKEN created
+2021-07-26 14:15:10 info: User ACCESS TOKEN created
+2021-07-26 14:15:41 info: User ACCESS TOKEN created
+2021-07-26 14:17:05 info: User ACCESS TOKEN created
+2021-07-26 14:17:51 info: User ACCESS TOKEN created
+2021-07-26 14:18:08 info: User ACCESS TOKEN created
+2021-07-26 14:18:35 info: User ACCESS TOKEN created
+2021-07-26 14:20:22 info: User ACCESS TOKEN created
+2021-07-26 14:21:42 info: User ACCESS TOKEN created
+2021-07-26 14:23:17 info: User ACCESS TOKEN created
+2021-07-26 14:24:22 info: User ACCESS TOKEN created
+2021-07-26 14:26:13 info: User ACCESS TOKEN created
+2021-07-26 14:30:44 info: User ACCESS TOKEN created
+2021-07-26 14:31:27 info: User ACCESS TOKEN created
+2021-07-26 14:32:11 info: User ACCESS TOKEN created
+2021-07-26 14:32:32 info: User ACCESS TOKEN created
+2021-07-26 15:06:45 info: User ACCESS TOKEN created
+2021-07-26 15:08:36 info: User ACCESS TOKEN created
+2021-07-26 15:09:28 info: User ACCESS TOKEN created
+2021-07-26 15:09:55 info: User updated
+2021-07-26 15:10:13 info: User ACCESS TOKEN created
+2021-07-26 15:10:37 info: Users Found
+2021-07-26 16:30:03 info: User ACCESS TOKEN created
+2021-07-26 16:30:21 info: Users Found
+2021-07-26 16:31:01 info: Users Found
+2021-07-26 16:39:06 info: User ACCESS TOKEN created
+2021-07-26 16:40:00 info: Users Found
+2021-07-26 16:52:10 info: Users Found
+2021-07-26 16:52:54 info: Users Found
+2021-07-26 16:53:12 info: User ACCESS TOKEN created
+2021-07-26 16:53:18 info: Users Found
+2021-07-26 16:54:58 info: Users Found
+2021-07-26 16:55:12 info: User ACCESS TOKEN created
+2021-07-26 16:55:15 info: Users Found
+2021-07-26 16:59:30 info: Users Found
+2021-07-26 16:59:30 info: Users Found
+2021-07-26 17:00:00 info: Users Found
+2021-07-26 17:00:00 info: Users Found
+2021-07-26 17:00:24 info: User ACCESS TOKEN created
+2021-07-26 17:00:26 info: Users Found
+2021-07-26 17:00:26 info: Users Found
+2021-07-26 17:01:40 info: Users Found
+2021-07-26 17:02:22 info: User ACCESS TOKEN created
+2021-07-26 17:02:25 info: Users Found
+2021-07-26 17:08:58 info: Users Found
+2021-07-26 17:15:03 info: User ACCESS TOKEN created
+2021-07-26 17:15:09 info: Users Found
+2021-07-26 17:19:00 info: Users Found
+2021-07-26 17:19:08 info: User ACCESS TOKEN created
+2021-07-26 17:19:11 info: Users Found
+2021-07-26 17:30:40 info: User ACCESS TOKEN created
+2021-07-26 17:30:45 info: Users Found
+2021-07-26 17:32:44 info: Users Found
+2021-07-26 17:33:42 info: User removed
+2021-07-26 17:36:26 info: Users Found
+2021-07-26 17:38:19 info: User removed
+2021-07-26 17:38:31 info: User ACCESS TOKEN created
+2021-07-26 17:38:36 info: Users Found
+2021-07-26 17:38:59 info: User updated
+2021-07-26 17:39:21 info: User ACCESS TOKEN created
+2021-07-26 17:39:26 info: Users Found
+2021-07-26 17:41:35 info: User ACCESS TOKEN created
+2021-07-26 17:48:07 info: User ACCESS TOKEN created
+2021-07-26 18:06:02 info: text info
+2021-07-26 18:06:02 error: text error
+2021-07-26 18:06:02 warn: text warn
+2021-07-26 18:09:02 info: text info
+2021-07-26 18:09:02 error: text error
+2021-07-26 18:09:02 warn: text warn
+2021-07-26 18:10:24 info: text info
+2021-07-26 18:10:24 warn: text warn
+2021-07-26 18:10:24 error: text error
+2021-07-26 18:10:49 info: text info
+2021-07-26 18:10:49 error: text error
+2021-07-26 18:10:49 warn: text warn
+2021-07-26 18:14:21 info: User ACCESS TOKEN created
+2021-07-26 18:14:40 info: text info
+2021-07-26 18:14:40 warn: text warn
+2021-07-26 18:14:40 error: text error
+2021-07-26 18:15:59 info: text info
+2021-07-26 18:15:59 warn: text warn
+2021-07-26 18:15:59 error: text error
+2021-07-26 18:16:52 info: text info
+2021-07-26 18:16:52 warn: text warn
+2021-07-26 18:16:52 error: text error
+2021-07-26 18:33:49 error: text error
+2021-07-26 18:33:49 warn: text warn
+2021-07-26 18:33:49 info: text info
+2021-07-26 18:34:13 info: User ACCESS TOKEN created
+2021-07-26 18:34:18 info: Users Found
